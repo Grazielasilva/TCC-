@@ -29,10 +29,6 @@ public class FormMB {
             sb.append("Campos obrigatórios não informados.");
         } else {
             sb.append("Cadastro realizado com sucesso!");
-            sb.append("Nome: ").append(this.nome).append("\n");
-            sb.append("E-mail: ").append(this.email).append("\n");
-            sb.append("Endereço: ").append(this.endereco).append("\n");
-            sb.append("Telefone: ").append(this.telefone).append("\n");
         }
 
         this.mensagemValidacao = sb.toString();
