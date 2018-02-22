@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TCC</title>
+
+        <style>
+            .label {
+                width: 100px;
+                display: inline-block;
+            }
+
+            .form {
+                width: 50%;
+                margin: auto;
+            }
+
+            .field {
+                width: 80%;
+            }
+
+            .button {
+                margin: 10px auto;
+                display: block;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form id="formGeral" prependId="false">
+            <p:panel id="ppanel" class="form" header="Clientes" footer="Formulário de Cadastro" toggleable="true">
+
+                <h:outputLabel class="label" value="Nome:"></h:outputLabel>
+                <p:inputText class="field" value="#{formMB.nome}"></p:inputText>
+                <br/>
+
+                <h:outputLabel class="label" value="E-mail:"></h:outputLabel>
+                <p:inputText class="field" value="#{formMB.email}"></p:inputText>
+                <br/>
+
+                <h:outputLabel class="label" value="Endereço:"></h:outputLabel>
+                <p:inputText class="field" value="#{formMB.endereco}"></p:inputText>
+                <br/>
+
+                <h:outputLabel class="label" value="Telefone:"></h:outputLabel>
+                <p:inputText class="field" value="#{formMB.telefone}"></p:inputText>
+                <br/>
+
+                <p:commandButton class="button"
+                                 value="Salvar"
+                                 actionListener="#{formMB.validar}"
+                                 oncomplete="dlg2.show();"
+                                 update="textoMensagem" process="textoMensagem" />
+            </p:panel>
+
+            <h:outputLabel id="textoMensagem" value="#{formMB.mensagemValidacao}"></h:outputLabel>
+            
+            <p:dialog header="Informação" id="dlg2id" widgetVar="dlg2" modal="true" height="100" appendToBody="true">
+                
+            </p:dialog>
+        </h:form>
+
+    </h:body>
+</html>
+
