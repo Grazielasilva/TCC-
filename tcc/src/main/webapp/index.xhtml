@@ -49,18 +49,19 @@
 
                 <p:commandButton class="button"
                                  value="Salvar"
-                                 actionListener="#{formMB.validar}"
-                                 oncomplete="dlg2.show();"
-                                 update="textoMensagem" process="textoMensagem" />
+                                 action="#{formMB.validar()}"
+                                 update="panelGroupMensagem"
+                                 oncomplete="dlg2.show();" />
             </p:panel>
 
-            <h:outputLabel id="textoMensagem" value="#{formMB.mensagemValidacao}"></h:outputLabel>
-            
-            <p:dialog header="Informação" id="dlg2id" widgetVar="dlg2" modal="true" height="100" appendToBody="true">
-                
+            <p:dialog header="Informação" id="dlg2id" widgetVar="dlg2" modal="true" resizable="false">
+                <h:panelGroup id="panelGroupMensagem">
+                    <h:outputLabel value="#{formMB.mensagemValidacao}"></h:outputLabel>
+                    <p:separator />
+                    <br/>
+                </h:panelGroup>
             </p:dialog>
         </h:form>
-
     </h:body>
 </html>
 

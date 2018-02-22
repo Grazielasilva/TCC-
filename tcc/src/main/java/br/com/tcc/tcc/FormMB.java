@@ -1,17 +1,12 @@
 package br.com.tcc.tcc;
 
-import javax.inject.Named;
-import javax.enterprise.context.Dependent;
-import javax.faces.bean.ApplicationScoped;
+import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
-import javax.faces.bean.SessionScoped;
-import javax.faces.event.ActionEvent;
 import javax.faces.view.ViewScoped;
 
 @ManagedBean
-@ApplicationScoped
-public class FormMB {
+@ViewScoped
+public class FormMB implements Serializable {
 
     private String nome;
     private String email;
@@ -22,7 +17,7 @@ public class FormMB {
     public FormMB() {
     }
 
-    public void validar(ActionEvent actionEvent) {
+    public void validar() {
         StringBuilder sb = new StringBuilder("");
 
         if (!validate()) {
